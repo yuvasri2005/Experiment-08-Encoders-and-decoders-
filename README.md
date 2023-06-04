@@ -55,16 +55,62 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+
 
 
 
 ### PROGRAM 
-/*
+
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Developed by: YUVASRI.K
+
+RegisterNumber:  212222050061
+
+ENCODER
+
+module EX8(a,b,c,d0,d1,d2d3,d4,d5,d6,d7);
+
+output a,b,c; 
+
+input d0,d1,d2,d3,d4,d5,d6,d7;
+
+or(a,d4,d5,d6,d7);
+
+
+or(b,d2,d3,d6,d7);
+
+or(c,d1,d3,d5,d7);
+
+endmodule
+
+DECODER
+
+module EX8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+
+input a,b,c;
+
+output d0,d1,d2,d3,d4,d5,d6,d7;
+
+assign d0 = (~a&~b&~c); 
+
+assign d1 = (~a&~b&c);
+
+assign d2 = (~a&b&~c);
+
+assign d3 =(~a&b&c);
+
+assign d4 = (a&~b&~c); 
+
+assign d5 = (a&~b&c);
+
+assign d6 = (a&b&~c); 
+
+assign d7 = (a&b&c); 
+
+endmodule
+
+
 
 
 
@@ -73,7 +119,14 @@ RegisterNumber:
 
 ### RTL LOGIC  
 
+ENCODER
 
+![238169328-aca6fb80-f5c1-4804-b92a-d85bb364631f](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/410770e3-48ef-409b-8ed6-b8616545cf6e)
+
+
+DECODER
+
+![238169342-8ab1edd1-9e35-4ca3-badb-22d69a610f8b](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/42ab0b53-1632-4aea-bcad-a27fcc86243d)
 
 
 
@@ -82,15 +135,33 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+ENCODER
 
+![238169377-bc6f29a3-f066-44f8-93d2-58303534584f](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/8b4764e4-5b97-4598-9886-2e3efd34e037)
+
+DECODER
+
+
+![238169392-22db8d63-5ac5-46d9-a404-be4508d6aceb](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/016efb68-223d-4939-9c21-a26cbd85aa03)
 
 
 
 ### TRUTH TABLE 
 
+ENCODER
 
+![238169396-ab4d23b4-a160-4eb3-a657-afe368bf1bdb](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/ff9bf168-4584-4c97-8c68-c940318a1f06)
+
+
+
+
+DECODER
+
+![238169407-76129e95-ba7d-4402-ac33-ca97a3d84f2e](https://github.com/yuvasri2005/Experiment-08-Encoders-and-decoders-/assets/129949620/8204ee65-958a-4e50-8d66-6495826d0cfd)
 
 
 
 
 ### RESULTS 
+
+Thus the program to design Encoder and Decoder are completed.
